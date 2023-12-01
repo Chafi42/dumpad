@@ -17,7 +17,7 @@ function playSound() {
                 })
         }
 }
-playSound()
+playSound();
 
 
 // const touches = document.querySelectorAll('.key');
