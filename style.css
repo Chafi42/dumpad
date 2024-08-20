@@ -11,11 +11,13 @@ html, body {
   overflow: hidden;
   font-family: Raleway, sans-serif;
 }
+
 h1 {
   color: black;
   font-size: 5vw;
   letter-spacing: 6px;
 }
+
 .pad {
   width: 400px;
   display: flex;
@@ -26,6 +28,7 @@ h1 {
   border: 4px solid black;
   box-shadow: 4px 4px 0 0 black;
 }
+
 .key {
   width: 100px;
   height: 100px;
@@ -43,12 +46,14 @@ h1 {
   user-select: none;
   transform: translate(0, 0);
 }
+
 .sound {
   font-size: 14px;
   text-transform: uppercase;
   color: #ff9068;
   margin-top: 7px
 }
+
 .key.playing {
   background-color: #ddd;
   box-shadow: 0 0 0 0 black;
@@ -56,9 +61,24 @@ h1 {
   border-color: #fd746c;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 .key.playing .sound {
   color: #fd746c;
   transform: scale(1.5);
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+/* Media query for screens up to 320px */
+@media (max-width: 320px) {
+  .pad {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .key {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+    font-size: 16px;
+  }
+}
