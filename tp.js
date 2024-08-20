@@ -20,26 +20,26 @@ function playSound() {
 playSound();
 
 
-// const touches = document.querySelectorAll('.key');
-// const musiques = document.querySelectorAll('audio');
-// let tlb = ['a', 'z', 'e', 'q', 's', 'd', 'w', 'x', 'c']
-// for (let i = 0; i < tlb.length; i++){
-//    document.addEventListener('keydown', (e) => {
-//       
-//       if (e.key === tlb[i]) {
-//          touches[i].classList.add('playing');
-//          musiques[i].play();
-//       }
+const touches = document.querySelectorAll('.key');
+const musiques = document.querySelectorAll('audio');
+let tlb = ['a', 'z', 'e', 'q', 's', 'd', 'w', 'x', 'c']
+for (let i = 0; i < tlb.length; i++){
+   document.addEventListener('keydown', (e) => {
+      
+      if (e.key === tlb[i]) {
+         touches[i].classList.add('playing');
+         musiques[i].play();
+      }
 
-//    })
+   })
 
-// document.addEventListener('keyup', (e) => {
-//   
+document.addEventListener('keyup', (e) => {
+  
 
-//    if (e.key === tlb[i]) {
+   if (e.key === tlb[i]) {
 
-//       touches[i].classList.remove('playing');
-//    }
+      touches[i].classList.remove('playing');
+   }
 
-// })
-// }
+})
+}

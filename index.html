@@ -5,74 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
     
 
-    <h1>DRUM PAD</h1>
-    
-    <div class="pad">
+  <h1 class="text-4xl font-bold text-center my-4">DRUM PAD</h1>
 
-      <div data-key="65" class="key">
-        <kbd>A</kbd>
-        <span class="sound">clap</span>
-      </div>
-      
-      <div data-key="90" class="key">
-        <kbd>Z</kbd>
-        <span class="sound">HIHAT</span>
-      </div>
-      <div data-key="69" class="key">
-        <kbd>E</kbd>
-        <span class="sound">KICK</span>
-      </div>
-      <div data-key="81" class="key">
-        <kbd>Q</kbd>
-        <span class="sound">OPENHAT</span>
-      </div>
-      <div data-key="83" class="key">
-        <kbd>S</kbd>
-        <span class="sound">BOOM</span>
-      </div>
-      <div data-key="68" class="key">
-        <kbd>D</kbd>
-        <span class="sound">RIDE</span>
-      </div>
-      <div data-key="87" class="key">
-        <kbd>W</kbd>
-        <span class="sound">SNARE</span>
-      </div>
-      <div data-key="88" class="key">
-        <kbd>X</kbd>
-        <span class="sound">TOM</span>
-      </div>
-
-      <div data-key="67" class="key">
-        <kbd>C</kbd>
-        <span class="sound">TINK</span>
-      </div>
-
-
-      
-
-        
+  <div class="pad grid grid-cols-3 gap-4 p-4">
+  
+    <div data-key="65" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">A</kbd>
+      <span class="sound block mt-2">clap</span>
     </div>
-    <!-- Audio source -->
-    <audio data-key="65" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/clap.wav"></audio>
-    <audio data-key="90" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/hihat.wav"></audio>
-    <audio data-key="69" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/kick.wav"></audio>
-    <audio data-key="81" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/openhat.wav"></audio>
-    <audio data-key="83" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/boom.wav"></audio>
-    <audio data-key="68" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/ride.wav"></audio>
-    <audio data-key="87" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/snare.wav"></audio>
-    <audio data-key="88" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/tom.wav"></audio>
-    <audio data-key="67" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/tink.wav"></audio>
-
-
-
-
-
-
-    <script src="tp.js"></script>
+    
+    <div data-key="90" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">Z</kbd>
+      <span class="sound block mt-2">HIHAT</span>
+    </div>
+    
+    <div data-key="69" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">E</kbd>
+      <span class="sound block mt-2">KICK</span>
+    </div>
+    
+    <div data-key="81" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">Q</kbd>
+      <span class="sound block mt-2">OPENHAT</span>
+    </div>
+    
+    <div data-key="83" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">S</kbd>
+      <span class="sound block mt-2">BOOM</span>
+    </div>
+    
+    <div data-key="68" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">D</kbd>
+      <span class="sound block mt-2">RIDE</span>
+    </div>
+    
+    <div data-key="87" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">W</kbd>
+      <span class="sound block mt-2">SNARE</span>
+    </div>
+    
+    <div data-key="88" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">X</kbd>
+      <span class="sound block mt-2">TOM</span>
+    </div>
+  
+    <div data-key="67" class="key bg-gray-200 p-4 rounded shadow text-center">
+      <kbd class="text-xl font-bold">C</kbd>
+      <span class="sound block mt-2">TINK</span>
+    </div>
+  
+  </div>
+  
+  <!-- Audio source -->
+  <audio data-key="65" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/clap.wav"></audio>
+  <audio data-key="90" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/hihat.wav"></audio>
+  <audio data-key="69" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/kick.wav"></audio>
+  <audio data-key="81" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/openhat.wav"></audio>
+  <audio data-key="83" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/boom.wav"></audio>
+  <audio data-key="68" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/ride.wav"></audio>
+  <audio data-key="87" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/snare.wav"></audio>
+  <audio data-key="88" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/tom.wav"></audio>
+  <audio data-key="67" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/tink.wav"></audio>
+  
+  <script src="tp.js"></script>
 </body>
 </html>
