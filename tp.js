@@ -1,45 +1,45 @@
-let keys = document.querySelectorAll('.key');
-let audio = document.querySelectorAll('audio');
-function playSound() {
-     let caractere = ["A", "Z", "E", "Q", "S", "D", "W", "X", "C"]
-        for (let i = 0; i < caractere.length; i++) {
-                document.addEventListener('keydown', (e) => {
-         if (e.key === caractere[i]) {
-                                keys[i].classList.add('playing');
-                                audio[i].play();
-                        }
-                        
-                        document.addEventListener('keyup', (e) => {
-                                if (e.key === caractere[i]) {
-                        keys[i].classList.remove('playing');
-                                }
-                        })
-                })
-        }
-}
-playSound();
+document.addEventListener('DOMContentLoaded', () => {
+   const keys = document.querySelectorAll('.key');
+   const audioElements = document.querySelectorAll('audio');
+   const keyCodes = ['65', '90', '69', '81', '83', '68', '87', '88', '67']; // Corresponding key codes for A, Z, E, Q, S, D, W, X, C
 
+   // Function to play sound based on key code
+   function playSound(keyCode) {
+       const key = document.querySelector(`.key[data-key="${keyCode}"]`);
+       const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+       if (!key) return;
 
-const touches = document.querySelectorAll('.key');
-const musiques = document.querySelectorAll('audio');
-let tlb = ['a', 'z', 'e', 'q', 's', 'd', 'w', 'x', 'c']
-for (let i = 0; i < tlb.length; i++){
-   document.addEventListener('keydown', (e) => {
-      
-      if (e.key === tlb[i]) {
-         touches[i].classList.add('playing');
-         musiques[i].play();
-      }
-
-   })
-
-document.addEventListener('keyup', (e) => {
-  
-
-   if (e.key === tlb[i]) {
-
-      touches[i].classList.remove('playing');
+       key.classList.add('playing');
+       audio.currentTime = 0; // Rewind to the start
+       audio.play();
    }
 
-})
-}
+   // Function to remove transition
+   function removeTransition(e) {
+       if (e.propertyName !== 'transform') return;
+       e.target.classList.remove('playing');
+   }
+
+   // Add event listeners for each key
+   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+   // Handle keydown event for keyboard
+   window.addEventListener('keydown', (e) => {
+       const keyCode = e.keyCode.toString();
+       if (keyCodes.includes(keyCode)) {
+           playSound(keyCode);
+       }
+   });
+
+   // Handle touchstart event for mobile
+   keys.forEach(key => {
+       key.addEventListener('touchstart', (e) => {
+           const keyCode = key.getAttribute('data-key');
+           playSound(keyCode);
+       });
+
+       key.addEventListener('touchend', (e) => {
+           key.classList.remove('playing');
+       });
+   });
+});
